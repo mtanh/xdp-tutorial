@@ -218,6 +218,7 @@ setup()
     get_nsname 1
 
     echo "Setting up new environment '$NS'"
+    echo "STATEFILE '$STATEFILE'"
 
     [ -e "$STATEFILE" ] && die "Environment for '$NS' already exists"
 
