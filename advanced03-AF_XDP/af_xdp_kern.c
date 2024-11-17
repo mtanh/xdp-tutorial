@@ -75,21 +75,21 @@ int xdp_sock_prog(struct xdp_md *ctx)
     }
 
     // Extract the source MAC address from the Ethernet header
-    // unsigned char *src_mac = eth->h_source;
-    // bpf_debug("src_mac[0]: %02x\n", src_mac[0]);
-    // bpf_debug("src_mac[1]: %02x\n", src_mac[1]);
-    // bpf_debug("src_mac[2]: %02x\n", src_mac[2]);
-    // bpf_debug("src_mac[3]: %02x\n", src_mac[3]);
-    // bpf_debug("src_mac[4]: %02x\n", src_mac[4]);
-    // bpf_debug("src_mac[5]: %02x\n", src_mac[5]);
+    unsigned char *src_mac = eth->h_source;
+    bpf_debug("src_mac[0]: %02x\n", src_mac[0]);
+    bpf_debug("src_mac[1]: %02x\n", src_mac[1]);
+    bpf_debug("src_mac[2]: %02x\n", src_mac[2]);
+    bpf_debug("src_mac[3]: %02x\n", src_mac[3]);
+    bpf_debug("src_mac[4]: %02x\n", src_mac[4]);
+    bpf_debug("src_mac[5]: %02x\n", src_mac[5]);
 
-    unsigned char *dest_mac = eth->h_dest;
-    bpf_debug("dest_mac[0]: %02x\n", dest_mac[0]);
-    bpf_debug("dest_mac[1]: %02x\n", dest_mac[1]);
-    bpf_debug("dest_mac[2]: %02x\n", dest_mac[2]);
-    bpf_debug("dest_mac[3]: %02x\n", dest_mac[3]);
-    bpf_debug("dest_mac[4]: %02x\n", dest_mac[4]);
-    bpf_debug("dest_mac[5]: %02x\n", dest_mac[5]);
+    // unsigned char *dest_mac = eth->h_dest;
+    // bpf_debug("dest_mac[0]: %02x\n", dest_mac[0]);
+    // bpf_debug("dest_mac[1]: %02x\n", dest_mac[1]);
+    // bpf_debug("dest_mac[2]: %02x\n", dest_mac[2]);
+    // bpf_debug("dest_mac[3]: %02x\n", dest_mac[3]);
+    // bpf_debug("dest_mac[4]: %02x\n", dest_mac[4]);
+    // bpf_debug("dest_mac[5]: %02x\n", dest_mac[5]);
 
     // bpf_printk("src: %llu, dst: %llu, proto: %u\n",
     //            ether_addr_to_u64(eth->h_source),

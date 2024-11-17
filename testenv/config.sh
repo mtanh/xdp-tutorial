@@ -13,3 +13,9 @@ IP4_PREFIX_SIZE=24 # Size of assigned prefixes
 IP4_FULL_PREFIX_SIZE=16 # Size of IP4_SUBNET
 VLAN_IDS=(1 2)
 GENERATED_NAME_PREFIX="xdptut"
+
+# Notes
+# sudo sysctl -w net.ipv4.ip_forward=1
+# sudo iptables -A FORWARD -i test1 -o test2 -j ACCEPT
+# sudo iptables -A FORWARD -i test2 -o test1 -j ACCEPT
+# sudo ip netns exec test1 ping 10.11.2.1
