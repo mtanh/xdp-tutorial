@@ -25,7 +25,7 @@ CMD=
 NS=
 XDP_LOADER=./xdp-loader
 XDP_STATS=./xdp_stats
-LEGACY_IP=0
+LEGACY_IP=1
 USE_VLAN=0
 RUN_ON_INNER=0
 

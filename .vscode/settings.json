@@ -8,5 +8,13 @@
         "editor.tabSize": 4,
         "editor.insertSpaces": true,
         "editor.detectIndentation": false
+    },
+    "files.associations": {
+        "hash_func01.h": "c",
+        "vmlinux.h": "c",
+        "xdp_sample_shared.h": "c",
+        "parsing_helpers.h": "c",
+        "ipv6.h": "c",
+        "bpf_helpers.h": "c"
     }
 }

@@ -194,7 +194,7 @@ static struct xsk_socket_info *xsk_configure_socket(struct config *cfg,
     xsk_cfg.tx_size = XSK_RING_PROD__DEFAULT_NUM_DESCS;
     xsk_cfg.xdp_flags = cfg->xdp_flags;
     xsk_cfg.bind_flags = cfg->xsk_bind_flags;
-    
+
     // This flag XSK_LIBBPF_FLAGS__INHIBIT_PROG_LOAD prevents the default kernel program
     // from being loaded as part of the xsk_socket__create() function call.
     // This way allows user finer control how to load kernel program and create AF_XDP socket.
@@ -322,7 +322,9 @@ static bool process_packet(struct xsk_socket_info *xsk,
             len < (sizeof(*eth) + sizeof(*ipv6) + sizeof(*icmp)) ||
             ipv6->nexthdr != IPPROTO_ICMPV6 ||
             icmp->icmp6_type != ICMPV6_ECHO_REQUEST)
+        {
             return false;
+        }
 
         memcpy(tmp_mac, eth->h_dest, ETH_ALEN);
         memcpy(eth->h_dest, eth->h_source, ETH_ALEN);
