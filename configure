@@ -20,8 +20,8 @@ check_toolchain()
 
     : ${PKG_CONFIG:=pkg-config}
     : ${CC=gcc}
-    : ${CLANG=clang-11}
-    : ${LLC=llc-11}
+    : ${CLANG=clang}
+    : ${LLC=llc}
     : ${BPFTOOL=bpftool}
 
     for TOOL in $PKG_CONFIG $CC $CLANG $LLC; do
